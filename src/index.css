@@ -276,7 +276,7 @@ img {
   min-height: 100vh;
   position: relative;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .main-content {
