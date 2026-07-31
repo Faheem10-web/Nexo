@@ -1,0 +1,62 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg-darker, #060504);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.loader-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: clamp(48px, 8vw, 110px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-text-white, #ffffff);
+  overflow: hidden;
+  line-height: 1;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.loader-title span {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffffff 40%, var(--color-gold-light, #e7c79f) 70%, var(--color-gold, #c9a57c) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loader-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.counter-number {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 300;
+  color: var(--color-gold, #c9a57c);
+  letter-spacing: 0.05em;
+}
+
+.counter-sub {
+  font-family: var(--font-accent), sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}

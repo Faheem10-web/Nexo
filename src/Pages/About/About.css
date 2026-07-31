@@ -1,0 +1,324 @@
+/* =========================================
+   ABOUT PAGE MAIN STYLING (SCANDI/JAPANDI)
+   ========================================= */
+
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+/* =========================================
+   1. HEADER BANNER
+   ========================================= */
+
+.about-header {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 170px 24px 80px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--color-bg-footer);
+  border-bottom: 1px solid var(--color-border-footer);
+}
+
+.about-bg-parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 125%;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  will-change: transform;
+}
+
+.about-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(20, 13, 5, 0.65) 0%, rgba(20, 13, 5, 0.45) 50%, rgba(20, 13, 5, 0.75) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.about-header-glow {
+  display: none;
+}
+
+.about-subtitle {
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 16px;
+  z-index: 2;
+}
+
+.about-title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-section-title);
+  line-height: var(--lh-tight);
+  font-weight: 500;
+  color: #FFFFFF;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  max-width: 900px;
+  z-index: 2;
+}
+
+.about-lead {
+  max-width: 620px;
+  font-family: var(--font-secondary);
+  font-size: var(--font-body-large);
+  line-height: var(--lh-body);
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 2;
+}
+
+/* =========================================
+   2. STORY SECTION
+   ========================================= */
+
+.about-story {
+  width: 100%;
+  padding: 120px clamp(20px, 5vw, 80px);
+  background-color: var(--color-bg-primary);
+}
+
+.about-story-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about-story-text h2 {
+  font-family: var(--font-serif);
+  font-size: var(--font-h2);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+
+.about-story-text p {
+  font-family: var(--font-secondary);
+  font-size: var(--font-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.about-story-btn {
+  width: max-content;
+  height: 52px;
+  padding: 0 34px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(184, 138, 90, 0.25);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-story-btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(184, 138, 90, 0.35);
+}
+
+.about-story-image-box {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.about-story-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1.25 / 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-story-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-story-image-box:hover img {
+  transform: scale(1.05);
+}
+
+.about-story-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(23, 23, 23, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* =========================================
+   3. CORE VALUES SECTION
+   ========================================= */
+
+.about-values {
+  width: 100%;
+  padding: 80px clamp(20px, 5vw, 80px) 140px;
+  background-color: var(--color-bg-primary);
+}
+
+.about-values-heading {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto 56px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.values-tag {
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--color-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.about-values-heading h2 {
+  font-family: var(--font-serif);
+  font-size: var(--font-h2);
+  color: var(--color-text-primary);
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.about-values-grid {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.value-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 40px clamp(20px, 4vw, 36px);
+  box-shadow: var(--shadow-card);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.value-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.35s ease;
+}
+
+.value-card:hover .value-icon-box {
+  transform: scale(1.08);
+}
+
+.value-card h3 {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.value-card p {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .about-story-container {
+    gap: 40px;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-header {
+    padding-top: 140px;
+    min-height: auto;
+  }
+
+  .about-story-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-story-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-story-image-box {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
