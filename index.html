@@ -8,16 +8,28 @@
   <meta name="theme-color" content="#060504" />
   <meta name="description" content="Nexo is an award-winning architecture and interior design studio crafting tactile residential spaces blending Scandi minimalism with Japandi utility." />
 
+  <!-- Instant Zero-Flicker Theme Initialization -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('nexo-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Resource Preconnects for Instant Image & Font Fetching -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://i.pinimg.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-  <!-- Preload Hero Background Image with Highest Priority -->
+  <!-- Preload Critical Hero Assets -->
   <link rel="preload" as="image" href="/assets/hero.png" fetchpriority="high" />
   <link rel="preload" as="image" href="/logo.png" fetchpriority="high" />
 
-  <!-- Non-blocking Icon Stylesheet -->
+  <!-- Non-blocking Font-Awesome Icon Stylesheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
 

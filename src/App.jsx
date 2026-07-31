@@ -21,13 +21,9 @@ const Contact = React.lazy(() => import("./Pages/Contact/Contact"));
 function PageSkeleton() {
   return (
     <div 
+      className="page-skeleton-fallback"
       style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "var(--color-bg-dark, #0d0b09)",
-        color: "var(--color-gold, #c9a57c)",
+        color: "var(--color-accent, #b88a5a)",
         fontFamily: "var(--font-accent, sans-serif)",
         fontSize: "12px",
         letterSpacing: "4px",
@@ -37,7 +33,7 @@ function PageSkeleton() {
       aria-label="Loading page contents"
     >
       <div className="skeleton-spinner" style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-        <span>✦</span> Loading Space
+        <span>✦</span> NEXO STUDIO
       </div>
     </div>
   );
@@ -65,15 +61,10 @@ function ScrollToTop() {
     resetScroll();
 
     const rafId = requestAnimationFrame(resetScroll);
-    const timer1 = setTimeout(resetScroll, 50);
-    const timer2 = setTimeout(resetScroll, 150);
-
     return () => {
       cancelAnimationFrame(rafId);
-      clearTimeout(timer1);
-      clearTimeout(timer2);
     };
-  }, [location.pathname, location.search, location.key]);
+  }, [location.pathname]);
 
   return null;
 }
@@ -118,7 +109,7 @@ function App() {
       <div className="app">
         <Header />
         <main className="main-content" id="main-content" tabIndex="-1">
-          <Suspense fallback={null}>
+          <Suspense fallback={<PageSkeleton />}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

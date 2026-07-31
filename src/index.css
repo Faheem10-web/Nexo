@@ -271,6 +271,26 @@ img {
 }
 
 .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   position: relative;
   width: 100%;
+  overflow-x: hidden;
+}
+
+.main-content {
+  flex: 1 0 auto;
+  min-height: calc(100vh - 120px);
+  width: 100%;
+  position: relative;
+}
+
+.page-skeleton-fallback {
+  min-height: calc(100vh - 120px);
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

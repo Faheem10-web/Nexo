@@ -31,7 +31,11 @@ export default function Header() {
 
   // Dark/Light Theme State
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("nexo-theme") || "light";
+    return (
+      document.documentElement.getAttribute("data-theme") ||
+      localStorage.getItem("nexo-theme") ||
+      "light"
+    );
   });
 
   useEffect(() => {
