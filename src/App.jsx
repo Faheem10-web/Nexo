@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import SmallLazyLoader from "./Components/SmallLazyLoader";
 
 // Lazy-loaded pages for optimized performance
 const Home = React.lazy(() => import("./Pages/Home/Home"));
@@ -17,26 +18,9 @@ const About = React.lazy(() => import("./Pages/About/About"));
 const Project = React.lazy(() => import("./Pages/Project/Project"));
 const Contact = React.lazy(() => import("./Pages/Contact/Contact"));
 
-// Elegant skeleton placeholder to avoid CLS (Cumulative Layout Shift)
+// Page transition fallback using SmallLazyLoader
 function PageSkeleton() {
-  return (
-    <div 
-      className="page-skeleton-fallback"
-      style={{
-        color: "var(--color-accent, #b88a5a)",
-        fontFamily: "var(--font-accent, sans-serif)",
-        fontSize: "12px",
-        letterSpacing: "4px",
-        textTransform: "uppercase"
-      }}
-      aria-live="polite"
-      aria-label="Loading page contents"
-    >
-      <div className="skeleton-spinner" style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-        <span>✦</span> NEXO STUDIO
-      </div>
-    </div>
-  );
+  return <SmallLazyLoader fullScreen text="NEXO STUDIO" size="md" variant="spinner" />;
 }
 
 // Global ScrollToTop helper to reset viewport and Lenis scrolls on route change
@@ -107,18 +91,18 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <div className="app">
-        <Header />
-        <main className="main-content" id="main-content" tabIndex="-1">
-          <Suspense fallback={<PageSkeleton />}>
+        <Suspense fallback={<PageSkeleton />}>
+          <Header />
+          <main className="main-content" id="main-content" tabIndex="-1">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/project" element={<Project />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
-          </Suspense>
-        </main>
-        <Footer />
+          </main>
+          <Footer />
+        </Suspense>
       </div>
     </BrowserRouter>
   );
